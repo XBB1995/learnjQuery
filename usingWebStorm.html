@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using WebStorm</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            background-color: #bfa;
+            margin-top: 5px;
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            //编写jQuery相关代码
+            //找到内容为空的指定元素
+            // var $div = $("div:empty");
+            // console.log($div);
+            //找到有文本内容或子元素的指定元素
+            // var $div = $("div:parent");
+            // console.log($div);
+            //找到包含指定文本内容的指定元素
+            // var $div = $("div:contains('div')");
+            // console.log($div);
+            //找到包含指定子元素的指定元素
+            //可以嵌套 但两个span嵌套时有问题
+            // var $div = $("div:has('span'):contains('inner p')");
+            // //为什么span里装p也算是span？
+            // var $div1 = $("div:has('span'):has('a')");
+            // var $div2 = $("div:has('a')");
+            // var $a = $("a:contains('ima')");
+            // $div.css({
+            //     width: "500px",
+            //     height: "50px"
+            // });
+            // // var $div1 = $("div:has('p')");
+            // console.log($div[0]);
+            // console.log($div1);
+            // console.log($div2);
+            // console.log($a);
+            // $a.parent().css({
+            //     fontSize: "50px",
+            //     color: "yellow",
+            //     backgroundColor: "red"
+            // });
+            // var $alldiv = $("div");
+            // console.log($alldiv.eq(4).offset().left);
+            // $("button").on("myClick", function () {
+            //     alert("myClick!");
+            // });
+            // $("button").on("myClick.cyq", function () {
+            //     alert("myClick!");
+            // });
+            // $("button").click(function (e) {
+            //     e.stopPropagation();
+            //     alert("DOM click!");
+            // });
+            // $("button").trigger("myClick");
+            $("button").click(function () {
+                $("ul").append("<li>新增的li</li>");
+            })
+
+            // $("ul>li").click(function () {
+            //     console.log($(this).html());;
+            // });
+
+            // $("ul").delegate("li", "click", function () {
+            //     // console.log(this);
+            //     console.log($(this).html());
+            // });
+
+            $("ul").on("click", "li", function () {
+                // console.log(this);
+                console.log($(this).html());
+            });
+        });
+    </script>
+</head>
+<body>
+<button>自定义事件</button>
+<!--<div></div>-->
+<!--&lt;!&ndash;<div></div>&ndash;&gt;-->
+<!--<div>div2</div>-->
+<!--<div>div3</div>-->
+<!--<div><span><p>inner p</p></span></div>-->
+<!--<div style="position:absolute;left: 125px;"><span><a>inner a</a></span></div>-->
+<!--<div><a>ima</a></div>-->
+<!--<a>outer a</a>-->
+<!--<div><span><span><span>inner span</span></span></span></div>-->
+<!--<a href="#" onmousemove="this.style.fontSize = '30px'">注册</a>-->
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+</ul>
+</body>
+</html>

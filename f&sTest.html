@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>father & son 移入移出问题</title>
+    <style type="text/css">
+        /*去除默认样式*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*解决高度塌陷*/
+        .clearfix:before,
+        .clearfix:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        .father {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background: #bfa;
+            /*margin: 20px;*/
+            /*float: right;*/
+        }
+        /*/后代选择器 */
+        .current .son{
+            background: #f1f;
+        }
+        /*.current {*/
+            /*background-color: #1f1f1f;*/
+        /*}*/
+        /*.current .father {*/
+            /*background: #000;*/
+        /*}*/
+    </style>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            // //编写jQuery相关代码
+            // $(".father").mouseenter(function (e) {
+            //     console.log("father被移入了");
+            //     // e.stopPropagation();
+            // });
+            // $(".father").mouseleave(function () {
+            //     console.log("father被移出了");
+            // });
+            $(".father").hover(function () {
+                $(this).toggleClass("current");
+            });
+            // $(".son").hover(function () {
+            //     $(this).toggleClass("current");
+            // });
+
+        });
+    </script>
+</head>
+<body>
+<div class="father clearfix">
+    <div class="son">
+
+    </div>
+</div>
+</body>
+</html>

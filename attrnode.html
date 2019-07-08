@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性和属性节点</title>
+    <style type="text/css">
+        /*去除默认样式*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*解决高度塌陷*/
+        .clearfix:before,
+        .clearfix:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    </style>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            //编写jQuery相关代码
+            // console.log($("span").attr("class"));
+            //只返回第一个元素指定的属性节点的值
+            // var $s = $("span").attr("class", function () {
+            //     // alert(this);
+            // });
+            // console.log($("span").attr("class"));;
+            // // console.log($s);
+            // //所有元素指定的属性节点均会设置生效
+            // //如果没有指定的属性节点，那么系统会自动新增该属性节点
+            //
+            // // $("span").removeAttr("class name");
+            // //会删除所有找到元素指定的属性节点
+            // console.log($("span").hasClass("clearfix"));;
+            // $("span").eq(0).prop("demo", "it666");
+            //
+            // $("span").removeProp("demo");
+            //
+            // console.log($("span").prop("demo"));
+            //prop不仅能操作属性，也能操作属性节点
+            //区别如下
+            // console.log($("input").prop("checked"));//true
+            // console.log($("input").attr("checked"));//checked
+            // var $btn = $("button")[0];
+            // $btn.onclick = function () {
+            //
+            // };
+            var $span = $("span");
+            console.log($span[0]);
+            console.log($span.eq(0));
+            // $span.eq(0).addClass("clearfix");
+            // console.log($span);
+            $("button").click(function () {
+                alert("!");
+            });
+            $("button").mousedown(function (event) {
+                event.preventDefault();
+            });
+            $("button").trigger("click");
+        });
+    </script>
+</head>
+<body>
+<span class="span1" name = "XBB"></span>
+<span class="span2" name = "it666"></span>
+<input type="checkbox" checked>
+<button>注册</button>
+</body>
+</html>
