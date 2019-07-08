@@ -54,12 +54,24 @@
             // $(".father").mouseleave(function () {
             //     console.log("father被移出了");
             // });
-            $(".father").hover(function () {
-                $(this).toggleClass("current");
-            });
+            // $(".father").hover(function () {
+            //     $(this).toggleClass("current");
+            //     $(this).hide("fast", function () {
+            //         $(this).show(1000);
+            //     });
+            // });
             // $(".son").hover(function () {
             //     $(this).toggleClass("current");
             // });
+            $(window).scroll(function () {
+                var offset = $("body, html").scrollTop();
+                console.log(offset);
+                if (offset>=500){
+                    alert("大于500.");
+                } else {
+
+                }
+            });
 
         });
     </script>
